@@ -19,7 +19,10 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+            //目前有login 和 signup
+            $message = $request->is('login') ? '您已登陆，无需该操作' : '您已注册并登录，无需该操作！';
+            session()->flash('info', $message);
+            return redirect('/');
         }
 
         return $next($request);
