@@ -62,5 +62,10 @@ class User extends Authenticatable
         return $this->hasMany(Bubble::class);
     }
 
+    public function feed()
+    {
+        return $this->bubbles()
+            ->orderBy('created_at', 'desc');
+    }
 
 }
