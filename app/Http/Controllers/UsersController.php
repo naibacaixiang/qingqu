@@ -36,7 +36,10 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $bubbles = $user->bubbles()->orderBy('created_at','desc')->paginate(10);
+
+
+        return view('users.show', compact('user','bubbles'));
     }
 
     public function store(Request $request)

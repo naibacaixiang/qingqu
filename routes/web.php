@@ -26,3 +26,6 @@ Route::delete('logout', 'SessionsController@destroy')->name('logout');
 
 //邮件激活账号的路由
 Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
+
+
+Route::resource('bubbles', 'BubblesController', ['only' => ['store', 'destroy']]);

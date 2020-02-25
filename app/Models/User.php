@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function bubbles()
     {
-        return $this->hasMany(Bubbles::class);
+        return $this->hasMany(Bubble::class);
     }
 
 
