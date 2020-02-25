@@ -26,4 +26,13 @@ class BubblesController extends Controller
         return redirect()->back();
     }
 
+
+
+    public function destroy(Bubble $bubble)
+    {
+        $this->authorize('destroy', $bubble);
+        $bubble->delete();
+        session()->flash('success', '微博已被成功删除！');
+        return redirect()->back();
+    }
 }
