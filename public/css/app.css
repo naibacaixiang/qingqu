@@ -11424,8 +11424,13 @@ footer .huangse {
 
 /*右侧边栏*/
 
+.part {
+  border-radius: 3px;
+  padding: 15px;
+}
+
 .right .login-form {
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 15px;
 }
 
