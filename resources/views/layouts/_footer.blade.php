@@ -1,10 +1,8 @@
-<footer class="footer">
-    <img class="brand-icon" src="https://cdn.learnku.com/uploads/sites/KDiyAbV0hj1ytHpRTOlVpucbLebonxeX.png">
-    <a href="https://learnku.com/laravel/courses" target=_blank>
-        刻意练习，每日精进
-    </a>
+<footer>
+    <div class="container-fluid">
 
-    <div class="float-right">
-        <a href="{{route('about')}}" >关于</a>
+        <div class="nihao">至于为什么要划分模块以及是使用子域名还是使用前缀等问题，鄙人是很想声情并茂的举例描述的，奈何表达能力弱，语言组织能力不行，就直接按部就班的记录操作过程吧。 在此很感谢 Summer 的提议 (博客：表达能力较弱的同学，可以先从写「技术日志」开始)。</div>
+        <div class="nihao2">至于为什么要划分模块以及是使用子域名还是使用前缀等问题，鄙人是很想声情并茂的举例描述的，奈何表达能力弱，语言组织能力不行，就直接按部就班的记录操作过程吧。 在此很感谢 Summer 的提议 (博客：表达能力较弱的同学，可以先从写「技术日志」开始)。</div>
+        <div class="huangse">至于为什么要划分模块以及是使用子域名还是使用前缀等问题，鄙人是很想声情并茂的举例描述的，奈何表达能力弱，语言组织能力不行，就直接按部就班的记录操作过程吧。 在此很感谢 Summer 的提议 (博客：表达能力较弱的同学，可以先从写「技术日志」开始)。</div>
     </div>
 </footer>

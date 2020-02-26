@@ -38,7 +38,6 @@ class UsersController extends Controller
     {
         $bubbles = $user->bubbles()->orderBy('created_at','desc')->paginate(10);
 
-
         return view('users.show', compact('user','bubbles'));
     }
 
