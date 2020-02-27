@@ -29,3 +29,4 @@ Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('conf
 
 
 Route::resource('bubbles', 'BubblesController', ['only' => ['store', 'destroy']]);
+Route::resource('posts', 'PostsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
