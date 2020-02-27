@@ -68,4 +68,19 @@ class User extends Authenticatable
             ->orderBy('created_at', 'desc');
     }
 
+
+    //Eloquent 修改器, admin后台修改密码时用到的
+    public function setPasswordAttribute($value)
+    {
+        // 如果值的长度等于 60，即认为是已经做过加密的情况（就是用户自己注册时或者改密码时）
+        if (strlen($value) != 60) {
+
+            // 不等于 60，做密码加密处理（后台改密码时）
+            $value = bcrypt($value);
+        }
+
+        $this->attributes['password'] = $value;
+    }
+
+
 }
