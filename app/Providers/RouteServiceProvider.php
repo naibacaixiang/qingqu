@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Post;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -30,9 +33,18 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // 路由参数全局约束，必须为数字，否则返回404页面
+        Route::pattern('post_id', '[0-9]+');
+        Route::pattern('user', '[0-9]+');
+
+
 
         parent::boot();
+
+
+
+
+
     }
 
     /**

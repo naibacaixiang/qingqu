@@ -29,4 +29,13 @@ Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('conf
 
 
 Route::resource('bubbles', 'BubblesController', ['only' => ['store', 'destroy']]);
-Route::resource('posts', 'PostsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('posts', 'PostsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+Route::get('{category}/{post_id}.html','PostsController@show')->name('post.show');
+
+
+//文章分类
+Route::get('{category}','CategoriesController@show')->name('category.show');
+
+//用户
+Route::get('user/{user}','UsersController@show')->name('user.show');

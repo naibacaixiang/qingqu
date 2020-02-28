@@ -57,10 +57,7 @@ class User extends Authenticatable
 
 
 
-    public function bubbles()
-    {
-        return $this->hasMany(Bubble::class);
-    }
+
 
     public function feed()
     {
@@ -80,6 +77,17 @@ class User extends Authenticatable
         }
 
         $this->attributes['password'] = $value;
+    }
+
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function bubbles()
+    {
+        return $this->hasMany(Bubble::class);
     }
 
 

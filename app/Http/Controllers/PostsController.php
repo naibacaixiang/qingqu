@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,10 +21,24 @@ class PostsController extends Controller
 		return view('posts.index', compact('posts'));
 	}
 
-    public function show(Post $post)
+    public function show(Request $request ,$category ,$id)
     {
-        return view('posts.show', compact('post'));
+
+        $post = Post::find($id);
+
+
+        if(! empty($post) && $post->category->slug == $category ){
+
+            return view('posts.show',compact('category','post'));
+        }else{
+            return abort(404 );
+        }
+
+
     }
+
+
+
 
 	public function create(Post $post)
 	{
@@ -33,7 +48,7 @@ class PostsController extends Controller
 	public function store(PostRequest $request)
 	{
 		$post = Post::create($request->all());
-		return redirect()->route('posts.show', $post->id)->with('message', 'Created successfully.');
+		return redirect()->route('posts.show', $post->id)->with('message', '发表成功');
 	}
 
 	public function edit(Post $post)
@@ -44,6 +59,7 @@ class PostsController extends Controller
 
 	public function update(PostRequest $request, Post $post)
 	{
+
 		$this->authorize('update', $post);
 		$post->update($request->all());
 
