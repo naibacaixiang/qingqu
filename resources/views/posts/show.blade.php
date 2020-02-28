@@ -29,7 +29,7 @@
 	{{ $post->title }}
 </p> <label>Content</label>
 <p>
-	{{ $post->content }}
+   {!! $post->content !!}
 </p> <label>User_id</label>
 <p>
 	{{ $post->user_id }}

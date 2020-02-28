@@ -9,7 +9,7 @@
 
             <div><a href="{{route('post.show',[$post->category->slug,$post->id])}}">{{$post->title}}</a></div>
 
-            <div>{{$post->content}}</div>
+            <div>{!! $post->content !!} </div>
 
             <div><a href="{{route('user.show',$post->user->id)}}">{{$post->user->name}}</a></div>
 
@@ -23,3 +23,5 @@
     @endif
 
 </div>
+
+{!! $posts->render() !!}

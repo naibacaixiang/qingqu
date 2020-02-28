@@ -21,7 +21,10 @@ class CategoriesController extends Controller
         $category = $categories[0];
 
         //解决N+1的问题 预加载关联模型
-        $posts = Post::with('user','category')->where('category_id',$category->id)->paginate(10);
+        $posts = Post::with('user','category')
+                        ->where('category_id',$category->id)
+                        ->orderBy('created_at','desc')
+                        ->paginate(10);
 
         return view('categories.show',compact('posts','category'));
 

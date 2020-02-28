@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<b>La</b>',
+    'logo-mini' => '<b>Qu</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -396,6 +396,20 @@ return [
     |
     */
     'extensions' => [
+        'wang-editor' => [
 
+            // 如果要关掉这个扩展，设置为false
+            'enable' => true,
+
+            // 编辑器的配置
+            'config' => [
+                'uploadImgServer' => '/uploadFile',
+//                'uploadFileName' => 'upload_file'
+            ]
+        ]
     ],
+
+
+
+
 ];

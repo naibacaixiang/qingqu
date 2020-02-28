@@ -39,3 +39,7 @@ Route::get('{category}','CategoriesController@show')->name('category.show');
 
 //用户
 Route::get('user/{user}','UsersController@show')->name('user.show');
+
+
+//上传图片 admin后台，编辑器上传图片接口
+Route::post('/uploadFile', 'UploadsController@uploadImg');

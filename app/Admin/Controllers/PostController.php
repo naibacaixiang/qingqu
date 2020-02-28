@@ -82,7 +82,8 @@ class PostController extends AdminController
         $form = new Form(new Post());
 
         $form->text('title', __('Title'));
-        $form->textarea('content', __('Content'));
+        $form->editor('content');
+//        $form->textarea('content', __('Content'));
         $form->number('user_id', __('User id'));
         $form->number('category_id', __('Category id'));
         $form->text('tags', __('Tags'));
@@ -91,7 +92,7 @@ class PostController extends AdminController
         $form->number('gift_count', __('Gift count'));
         $form->text('status', __('Status'))->default('public');
         $form->text('download_link', __('Download link'));
-        $form->textarea('excerpt', __('Excerpt'));
+//        $form->textarea('excerpt', __('Excerpt'));
 
         return $form;
     }
