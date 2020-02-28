@@ -276,11 +276,24 @@ bottombar-back {  0% {
   }
 }
 
+//配色定义区。
+
+$pink : #ff5983;
+$dark : #343a40;
+
+
+
 
 body{
-
   background: #494949;
 }
+.wrapper{
+  color: #636b6f;
+}
+.wrapper a{
+  text-decoration:none;
+}
+
 
 footer{
   background: #202223;
@@ -298,6 +311,7 @@ nav{
 
 footer {
   color: #eee;
+  margin-top: 20px;
 }
 
 footer .nihao{
@@ -309,7 +323,11 @@ footer .nihao2{
 }
 
 footer .huangse{
-  color: #ffc107;
+  color: $pink;
+}
+//中间区域最小高度
+.main-center{
+  min-height: 1300px;
 }
 /*flex布局 */
 .row-box{
@@ -400,9 +418,102 @@ footer .huangse{
   margin-right: 10px;
   margin-top: 10px;
 }
-
+//冒泡删除按钮右侧
 .for-bubble-del{
   justify-content:space-between;
 }
 
+//默认文章分类页
+.post-loop{
+  margin-bottom: 10px;
+}
+.category-default-loop{
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  justify-content:space-between;
+}
+.category-default-loop .post-title{
+  padding-left: 15px;
+  border-left:solid 5px $pink;
+}
+.category-default-loop .post-title a{
+  color:$dark;
+}
+.category-default-loop .post-title h3{
+  font-size: 16px;
+}
+.post-pagination .navbar-offcanvas {
+  margin-top: 25px;
 
+}
+.page-item .page-link {
+  color: $pink;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+
+
+.page-item.active .page-link{
+  color:#fff;
+  background-color: $pink;
+  border:$pink;
+}
+
+//image 图片文章分类页
+.category-image{
+  flex-wrap: wrap;
+}
+.category-image-loop .post-title{
+  overflow: hidden;
+  padding: 10px 5px;
+}
+.category-image-loop .post-cover{
+  overflow: hidden;
+}
+//.category-image-loop img:hover{
+//  transform: scale(1.2);
+//  transition: all 0.6s;
+//}
+
+.category-image-loop:hover{
+  box-shadow: 9px 9px 6px #999;
+}
+.category-image-loop{
+  width: 220px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.category-image-loop:nth-child(3n){
+  margin-right: 0;
+}
+.category-image-loop h3{
+  font-size: 16px;
+}
+.category-image-loop a{
+  color: $dark;
+}
+// image分类页面 响应式
+@media (max-width: 575px) {
+  .category-image-loop{
+    width:150px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+  }
+  .category-image-loop:nth-child(2n+1){
+    margin-right: 10px;
+  }
+
+  .category-image-loop img{
+    width:150px;
+    height: auto;
+  }
+}
+
+//文章页面 post
+.post h1{
+  font-size: 24px;
+}

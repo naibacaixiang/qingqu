@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@yield('title', 'Weibo App') - Laravel 入门教程</title>
+    <title>@yield('title', 'WWW.QINGQU.PLUS') - 情趣 Plus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
@@ -11,7 +11,7 @@
 
 <div class="wrapper">
     <div class="container">
-        <div class="row">
+        <div class="row main-center">
     @include('shared._messages')
     @yield('content')
 

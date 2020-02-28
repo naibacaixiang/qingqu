@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title',$category->name)
+
 @section('content')
 
 
@@ -17,10 +19,14 @@
 
     </div>
 
+    @switch($category->type)
+        @case('image')
+        @include('sidebar._home-sidebar')
+        @break
 
-    @include('sidebar._home-sidebar')
-
-
+        @default
+        @include('sidebar._home-sidebar')
+    @endswitch
 
 
 

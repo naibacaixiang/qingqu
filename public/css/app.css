@@ -11327,6 +11327,14 @@ body {
   background: #494949;
 }
 
+.wrapper {
+  color: #636b6f;
+}
+
+.wrapper a {
+  text-decoration: none;
+}
+
 footer {
   background: #202223;
   height: 200px;
@@ -11342,6 +11350,7 @@ nav {
 
 footer {
   color: #eee;
+  margin-top: 20px;
 }
 
 footer .nihao {
@@ -11353,7 +11362,11 @@ footer .nihao2 {
 }
 
 footer .huangse {
-  color: #ffc107;
+  color: #ff5983;
+}
+
+.main-center {
+  min-height: 1300px;
 }
 
 /*flex布局 */
@@ -11454,5 +11467,103 @@ footer .huangse {
 
 .for-bubble-del {
   justify-content: space-between;
+}
+
+.post-loop {
+  margin-bottom: 10px;
+}
+
+.category-default-loop {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  justify-content: space-between;
+}
+
+.category-default-loop .post-title {
+  padding-left: 15px;
+  border-left: solid 5px #ff5983;
+}
+
+.category-default-loop .post-title a {
+  color: #343a40;
+}
+
+.category-default-loop .post-title h3 {
+  font-size: 16px;
+}
+
+.post-pagination .navbar-offcanvas {
+  margin-top: 25px;
+}
+
+.page-item .page-link {
+  color: #ff5983;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+
+.page-item.active .page-link {
+  color: #fff;
+  background-color: #ff5983;
+  border: #ff5983;
+}
+
+.category-image {
+  flex-wrap: wrap;
+}
+
+.category-image-loop .post-title {
+  overflow: hidden;
+  padding: 10px 5px;
+}
+
+.category-image-loop .post-cover {
+  overflow: hidden;
+}
+
+.category-image-loop:hover {
+  box-shadow: 9px 9px 6px #999;
+}
+
+.category-image-loop {
+  width: 220px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.category-image-loop:nth-child(3n) {
+  margin-right: 0;
+}
+
+.category-image-loop h3 {
+  font-size: 16px;
+}
+
+.category-image-loop a {
+  color: #343a40;
+}
+
+@media (max-width: 575px) {
+  .category-image-loop {
+    width: 150px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+  }
+
+  .category-image-loop:nth-child(2n+1) {
+    margin-right: 10px;
+  }
+
+  .category-image-loop img {
+    width: 150px;
+    height: auto;
+  }
+}
+
+.post h1 {
+  font-size: 24px;
 }
 

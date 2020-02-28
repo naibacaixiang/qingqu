@@ -1,66 +1,47 @@
-@extends('layouts.app')
+@extends('layouts.default')
+
+@section('title',$post->title)
 
 @section('content')
 
-<div class="container">
-  <div class="col-md-10 offset-md-1">
-    <div class="card ">
-      <div class="card-header">
-        <h1>Post / Show #{{ $post->id }}</h1>
+
+  <div class="col-lg-8 left">
+
+
+    <div class="part post">
+
+      <div class="post-title">
+        <h1>{{$post->title}}</h1>
+      </div>
+      <div class="post-info">
+        <span class="post-time">{{$post->created_at}}</span>
+        <span class="post-category">{{$post->category->name}}</span>
+        <span class="post-user">{{$post->user->name}}</span>
+        <span class="post-edit float-right">
+          <a href="{{route('posts.edit',$post->id)}}" class="btn btn-success btn-sm">编辑</a>
+        </span>
+      </div>
+      <div class="post-content">
+        {!! $post->content !!}
       </div>
 
-      <div class="card-body">
-        <div class="card-block bg-light">
-          <div class="row">
-            <div class="col-md-6">
-              <a class="btn btn-link" href="{{ route('posts.index') }}"><- Back</a>
-            </div>
-            <div class="col-md-6">
-              <a class="btn btn-sm btn-warning float-right mt-1" href="{{ route('posts.edit', $post->id) }}">
-                Edit
-              </a>
-            </div>
-          </div>
-        </div>
-        <br>
+      <div class="post-tag"></div>
 
-        <label>Title</label>
-<p>
-	{{ $post->title }}
-</p> <label>Content</label>
-<p>
-   {!! $post->content !!}
-</p> <label>User_id</label>
-<p>
-	{{ $post->user_id }}
-</p> <label>Category_id</label>
-<p>
-	{{ $post->category_id }}
-</p> <label>Tags</label>
-<p>
-	{{ $post->tags }}
-</p> <label>Reply_count</label>
-<p>
-	{{ $post->reply_count }}
-</p> <label>View_count</label>
-<p>
-	{{ $post->view_count }}
-</p> <label>Gift_count</label>
-<p>
-	{{ $post->gift_count }}
-</p> <label>Status</label>
-<p>
-	{{ $post->status }}
-</p> <label>Download_link</label>
-<p>
-	{{ $post->download_link }}
-</p> <label>Excerpt</label>
-<p>
-	{{ $post->excerpt }}
-</p>
-      </div>
+
+
     </div>
-  </div>
-</div>
 
-@endsection
+  </div>
+
+
+    @include('sidebar._home-sidebar')
+
+
+
+
+
+
+
+
+
+@stop
