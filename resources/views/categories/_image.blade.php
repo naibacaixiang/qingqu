@@ -16,7 +16,7 @@
                     </a>
                 </div>
                 <div class="post-title">
-                    <a href="{{route('post.show',[$post->category->slug,$post->id])}}">
+                    <a href="{{route('post.show',[$post->category->slug,$post])}}">
                         <h3>{{$post->title}}</h3>
                     </a>
                 </div>

@@ -8,7 +8,7 @@
     </div>
 
     @can('destroy', $bubble)
-        <form action="{{ route('bubbles.destroy', $bubble->id) }}" method="POST" onsubmit="return confirm('您确定要删除本条微博吗？');">
+        <form action="{{ route('bubbles.destroy', $bubble) }}" method="POST" onsubmit="return confirm('您确定要删除本条冒泡吗？');">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
             <button type="submit" class="btn btn-sm btn-danger">删除</button>

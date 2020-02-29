@@ -9,7 +9,7 @@
         @foreach($posts as $post)
 
             <div class="row-box category-default-loop">
-                <div class="post-title"><a href="{{route('post.show',[$post->category->slug,$post->id])}}"><h3>{{$post->title}}</h3></a></div>
+                <div class="post-title"><a href="{{route('post.show',[$post->category->slug,$post])}}"><h3>{{$post->title}}</h3></a></div>
                 <div class="">{{$post->created_at}}</div>
 
             </div>

@@ -15,10 +15,10 @@
       </div>
       <div class="post-info">
         <span class="post-time">{{$post->created_at}}</span>
-        <span class="post-category">{{$post->category->name}}</span>
-        <span class="post-user">{{$post->user->name}}</span>
+        <span class="post-category"><a href="{{route('category.show',$post->category->slug)}}">{{$post->category->name}}</a></span>
+        <span class="post-user"><a href="{{route('user.show',$post->user)}}">{{$post->user->name}}</a></span>
         <span class="post-edit float-right">
-          <a href="{{route('posts.edit',$post->id)}}" class="btn btn-success btn-sm">编辑</a>
+          <a href="{{route('post.edit',$post)}}" class="btn btn-success btn-sm">编辑</a>
         </span>
       </div>
       <div class="post-content">

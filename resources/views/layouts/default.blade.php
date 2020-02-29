@@ -4,6 +4,7 @@
     <title>@yield('title', 'WWW.QINGQU.PLUS') - 情趣 Plus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @yield('css')
 </head>
 <body>
 
@@ -26,6 +27,7 @@
 <script src="{{asset('js/popper.js')}}"></script>
 
 <script src="{{ mix('js/app.js') }}"></script>
+@yield('js')
 
 <script>var window_height;
     var window_width;

@@ -19,7 +19,7 @@
                             </div>
                             <div class="name-time col-box">
                                 <div class="name-zone">
-                                    <span><a href="{{ route('users.show', $bubble->user->id )}}">{{$bubble->user->name}}</a></span>
+                                    <span><a href="{{ route('user.show', $bubble->user )}}">{{$bubble->user->name}}</a></span>
                                     <span>Level.22</span>
                                     <span>VIP会员</span>
                                     <span>官方</span>
@@ -34,7 +34,7 @@
 
                         </div>
                         <div class="bubble-content">
-                            {{ $bubble->content }}
+                            <a href="{{ route('bubble.show',$bubble) }}">{{ $bubble->content }}</a>
                         </div>
 
 
@@ -65,7 +65,7 @@
                         @can('destroy', $bubble)
                             <div>
 
-                                <form action="{{ route('bubbles.destroy', $bubble->id) }}"  method="POST" onsubmit="return confirm('您确定要删除本条微博吗？');">
+                                <form action="{{ route('bubbles.destroy', $bubble) }}"  method="POST" onsubmit="return confirm('您确定要删除本条微博吗？');">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
                                     <button type="submit" class="btn btn-sm btn-danger">删除</button>
