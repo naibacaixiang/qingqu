@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Bubble;
@@ -9,14 +10,20 @@ use App\Models\Bubble;
 class StaticPagesController extends Controller
 {
 
-    public function home()
+    public function home(User $user)
     {
-        $feed_items = [];
-        if (Auth::check()) {
-            $feed_items = Auth::user()->feed()->paginate(30);
-        }
+//        $feed_items = [];
+//        if (Auth::check()) {
+//            $feed_items = Auth::user()->feed()->paginate(30);
+//        }
 //        dd($feed_items);
-        return view('static_pages/home',compact('feed_items'));
+
+
+        $user = Auth::user();
+
+
+//        return 123;
+        return view('static_pages/home',compact('user'));
 
     }
 

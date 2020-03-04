@@ -11323,8 +11323,23 @@ body > #overlay {
   }
 }
 
+.btn-pink {
+  color: #fff;
+  background-color: #FF80B3;
+  border-color: #FF80B3;
+}
+
+.btn-pink:hover {
+  color: #eee;
+  background-color: #ff2465;
+}
+
+.qingqu-plus a {
+  font-weight: bold;
+}
+
 body {
-  background: #494949;
+  background: #f0f2f5;
 }
 
 .wrapper {
@@ -11333,6 +11348,10 @@ body {
 
 .wrapper a {
   text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
 
 footer {
@@ -11362,7 +11381,7 @@ footer .nihao2 {
 }
 
 footer .huangse {
-  color: #ff5983;
+  color: #FF80B3;
 }
 
 .main-center {
@@ -11390,6 +11409,10 @@ footer .huangse {
 
 .part {
   background: #fff;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #e3eaef;
+  box-shadow: 0 1px 2px 0 rgba(101, 129, 156, 0.08);
 }
 
 .bubble-loop {
@@ -11400,16 +11423,37 @@ footer .huangse {
 
 .avatar img {
   margin-right: 10px;
+  width: 48px;
+  height: 48px;
+}
+
+.name-time a {
+  color: #636b6f;
+}
+
+.name-zone,
+.time-zone {
+  font-size: 14px;
+}
+
+.name-zone a {
+  font-weight: bold;
 }
 
 .name-zone span {
   margin-right: 5px;
 }
 
+.bubble-title {
+  margin-top: 10px;
+}
+
 .bubble-content {
-  margin: 10px 0;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+.category-bubble .simditor .simditor-body {
+  min-height: 120px;
 }
 
 .bubble-info {
@@ -11430,17 +11474,32 @@ footer .huangse {
   font-size: 14px;
 }
 
-.bubble-topics span a {
+.bubble-topics a {
   /*margin-right:10px;*/
   font-size: 14px;
+  margin: 0 12px 12px 0;
+  min-height: 24px;
+  background-color: #fff;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  vertical-align: top;
+  overflow: hidden;
+  color: #333 !important;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.bubble-topics .tag-before {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  text-align: center;
+  line-height: 24px;
+  background-color: #FF80B3;
+  color: #fff;
 }
 
 /*右侧边栏*/
-
-.part {
-  border-radius: 3px;
-  padding: 15px;
-}
 
 .right .login-form {
   border-radius: 3px;
@@ -11455,6 +11514,10 @@ footer .huangse {
 .login-form .reg {
   color: #fff;
   padding: 0.375rem 30px;
+}
+
+.right .logout {
+  margin: 0 auto;
 }
 
 /*菜单里的注册登录按钮*/
@@ -11481,7 +11544,7 @@ footer .huangse {
 
 .category-default-loop .post-title {
   padding-left: 15px;
-  border-left: solid 5px #ff5983;
+  border-left: solid 5px #FF80B3;
 }
 
 .category-default-loop .post-title a {
@@ -11497,15 +11560,15 @@ footer .huangse {
 }
 
 .page-item .page-link {
-  color: #ff5983;
+  color: #FF80B3;
   background-color: #fff;
   border: 1px solid #eee;
 }
 
 .page-item.active .page-link {
   color: #fff;
-  background-color: #ff5983;
-  border: #ff5983;
+  background-color: #FF80B3;
+  border: #FF80B3;
 }
 
 .category-image {
@@ -11517,20 +11580,18 @@ footer .huangse {
   padding: 10px 5px;
 }
 
-.category-image-loop .post-cover {
-  overflow: hidden;
-}
-
 .category-image-loop:hover {
   box-shadow: 9px 9px 6px #999;
 }
 
 .category-image-loop {
   width: 220px;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-right: 19px;
+  margin-bottom: 19px;
   overflow: hidden;
-  border: 1px solid #eee;
+  border-radius: 3px;
+  box-shadow: 0px 1px 3px 0px #D4D4D5, 0px 0px 0px 1px #D4D4D5;
+  border: 1px solid #e3eaef;
 }
 
 .category-image-loop:nth-child(3n) {
@@ -11545,25 +11606,125 @@ footer .huangse {
   color: #343a40;
 }
 
-@media (max-width: 575px) {
-  .category-image-loop {
-    width: 150px;
-    margin-right: 0px;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-  }
-
-  .category-image-loop:nth-child(2n+1) {
-    margin-right: 10px;
-  }
-
-  .category-image-loop img {
-    width: 150px;
-    height: auto;
-  }
+.category-bubble {
+  margin-bottom: 30px;
 }
 
 .post h1 {
-  font-size: 24px;
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.post .post-info {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #d3e0e9;
+  padding-bottom: 15px;
+}
+
+.post .post-content {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.mini-nav {
+  margin-bottom: 20px;
+}
+
+.user-center-avatar img {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.user-center-name {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.user-center-level {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.user-center-description {
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.user-center-follow li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  border-right: 1px solid #eee;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.user-center-follow li:last-child {
+  border: none;
+}
+
+.user-center-follow li span {
+  display: block;
+  font-size: 14px;
+}
+
+.user-center-follow:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.user-center-follow .follow {
+  margin-top: 60px;
+}
+
+.user-center-follow .follow button {
+  width: 100px;
+  margin: 0 auto;
+  display: block;
+}
+
+.follow-list-loop {
+  margin-bottom: 15px;
+}
+
+.follow-list-loop a {
+  color: #343a40;
+}
+
+.follow-name-level-vip .user-name {
+  margin-right: 5px;
+}
+
+.follow-list-loop .follow-avatar {
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+.follow-name-level-vip {
+  margin-bottom: 10px;
+}
+
+.follow-list .title {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.widget .title {
+  font-size: 20px;
+  border-left: 3px solid #FF80B3;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.widget .content {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
 }
 

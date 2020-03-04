@@ -12,6 +12,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     use Traits\HashIdHelper;
+    use Traits\CountHelper;
 
     protected $table = 'users';
     /**
@@ -60,14 +61,6 @@ class User extends Authenticatable
 
 
 
-
-    public function feed()
-    {
-        return $this->bubbles()
-            ->orderBy('created_at', 'desc');
-    }
-
-
     //Eloquent 修改器, admin后台修改密码时用到的
     public function setPasswordAttribute($value)
     {
@@ -87,9 +80,41 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function bubbles()
+
+    //用户的粉丝，多对多关系
+    public function followers()
     {
-        return $this->hasMany(Bubble::class);
+        return $this->belongsToMany(User::Class, 'followers', 'user_id', 'follower_id');
+    }
+
+    //用户的关注，多对多关系
+    public function followings()
+    {
+        return $this->belongsToMany(User::Class, 'followers', 'follower_id', 'user_id');
+    }
+
+    //关注
+    public function follow($user_ids)
+    {
+        if ( ! is_array($user_ids)) {
+            $user_ids = compact('user_ids');
+        }
+        $this->followings()->sync($user_ids, false);
+    }
+
+//    取消关注
+    public function unfollow($user_ids)
+    {
+        if ( ! is_array($user_ids)) {
+            $user_ids = compact('user_ids');
+        }
+        $this->followings()->detach($user_ids);
+    }
+
+    //
+    public function isFollowing($user_id)
+    {
+        return $this->followings->contains($user_id);
     }
 
 

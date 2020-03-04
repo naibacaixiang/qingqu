@@ -13,6 +13,7 @@
       <div class="post-title">
         <h1>{{$post->title}}</h1>
       </div>
+
       <div class="post-info">
         <span class="post-time">{{$post->created_at}}</span>
         <span class="post-category"><a href="{{route('category.show',$post->category->slug)}}">{{$post->category->name}}</a></span>
@@ -20,7 +21,11 @@
         <span class="post-edit float-right">
           <a href="{{route('post.edit',$post)}}" class="btn btn-success btn-sm">编辑</a>
         </span>
+        <span class="post-del float-right">
+          <a href="{{route('post.soft_delete',$post)}}" class="btn btn-danger btn-sm">删除</a>
+        </span>
       </div>
+
       <div class="post-content">
         {!! $post->content !!}
       </div>

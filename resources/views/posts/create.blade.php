@@ -11,7 +11,6 @@
 @section('content')
 
 
-
     <div class="col-lg-8 left">
 
         <div class="card">
@@ -22,7 +21,6 @@
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-
                 <form action="{{route('post.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
@@ -30,7 +28,6 @@
                         <input type="text" class="form-control" name="title" id="" aria-describedby="" placeholder="请输入标题">
 
                     </div>
-
 
                     <div class="form-group">
                         <label for="content">正文</label>
@@ -40,7 +37,6 @@
                         </textarea>
 
                     </div>
-
 
                     <div class="form-group">
                         <label for="tag">话题</label>

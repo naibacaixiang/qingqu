@@ -163,6 +163,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+//        视图合成
+        App\Providers\ViewComposerServiceProvider::class,
+
         /*
          * Package Service Providers...
          */

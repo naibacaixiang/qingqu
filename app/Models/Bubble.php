@@ -8,14 +8,11 @@ class Bubble extends Model
 {
     use Traits\HashIdHelper;
 
-    protected $table = 'bubbles';
+    protected $table = 'posts';
 
-    protected $fillable = ['content'];
+    protected $fillable = ['title', 'content', 'user_id', 'category_id', 'tags'];
 
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
 
 }

@@ -16,6 +16,13 @@ class SeedCategoriesData extends Migration
     {
         $categories = [
             [
+                'name'        => '冒泡',
+                'description' => '冒泡冒泡',
+                'slug'        => 'bubble',
+                'type'        => 'bubble',
+                'order_by'    => '0',
+            ],
+            [
                 'name'        => '公告',
                 'description' => '站点公告',
                 'slug'        => 'notice',

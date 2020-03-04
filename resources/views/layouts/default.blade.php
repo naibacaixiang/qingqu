@@ -12,8 +12,9 @@
 
 <div class="wrapper">
     <div class="container">
+        @include('shared._messages')
         <div class="row main-center">
-    @include('shared._messages')
+
     @yield('content')
 
 

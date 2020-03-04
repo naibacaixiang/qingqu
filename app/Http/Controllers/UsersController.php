@@ -12,7 +12,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['show', 'create', 'store','index','confirmEmail']
+            'except' => ['show', 'create', 'store','index','confirmEmail','followers','followings']
         ]);
 
         $this->middleware('guest', [
@@ -21,12 +21,6 @@ class UsersController extends Controller
     }
 
 
-    public function index()
-    {
-        $users = User::paginate(10);
-        return view('users.index', compact('users'));
-    }
-
 
 
     public function create()
@@ -34,13 +28,22 @@ class UsersController extends Controller
         return view('users.create');
     }
 
+    public function magicPost(User $user,$type,$page)
+    {
+        $posts = $user->posts()->with('category','user')
+            ->where('post_type',$type)->orderBy('created_at','desc')
+            ->paginate($page);
+
+        return $posts;
+    }
+
+
+
     public function show(User $user)
     {
-        $bubbles = $user->bubbles()->orderBy('created_at','desc')->paginate(10);
-
-
-
-        return view('users.show', compact('user','bubbles'));
+        $posts = $user->posts()->with('category','user')->orderBy('created_at','desc')->paginate(10);
+//        $user = $user->with('posts');
+        return view('users.show', compact('user','posts'));
     }
 
     public function store(Request $request)
@@ -71,7 +74,7 @@ class UsersController extends Controller
         $from = 'summer@example.com';
         $name = 'Summer';
         $to = $user->email;
-        $subject = "感谢注册 Weibo 应用！请确认你的邮箱。";
+        $subject = "感谢注册 情趣 Plus ！请确认你的邮箱。";
 
         Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
             $message->from($from, $name)->to($to)->subject($subject);
@@ -119,16 +122,21 @@ class UsersController extends Controller
     }
 
 
-    public function destroy(User $user)
+
+
+    public function followings(User $user)
     {
-
-        $this->authorize('destroy', $user);
-
-        $user->delete();
-        session()->flash('success', '成功删除用户！');
-        return back();
+        $follow_users = $user->followings()->paginate(30);
+        $title = $user->name . '关注的人';
+        return view('users.follow', compact('follow_users', 'title','user'));
     }
 
+    public function followers(User $user)
+    {
+        $follow_users = $user->followers()->paginate(30);
+        $title = $user->name . '的粉丝';
+        return view('users.follow', compact('follow_users', 'title','user'));
+    }
 
 
 }

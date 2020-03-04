@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Hashids\Hashids;
 
-class Tag extends Model
+class Followers extends Model
 {
+    //
     use Traits\HashIdHelper;
-
-    protected $fillable = ['name'];
 }
