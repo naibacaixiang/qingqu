@@ -7,12 +7,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Hashids\Hashids;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
+    use HasRoles;//权限管理
     use Notifiable;
-    use Traits\HashIdHelper;
-    use Traits\CountHelper;
+    use Traits\HashIdHelper;//id 哈希
+    use Traits\CountHelper;//自定义计数
 
     protected $table = 'users';
     /**
